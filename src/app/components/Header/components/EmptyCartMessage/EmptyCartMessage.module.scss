@@ -1,0 +1,35 @@
+@import "src/styles/vars";
+
+.wrapper {
+  width: 272px;
+  height: 136px;
+
+  :global {
+    .ant-empty-image {
+      width: auto;
+      height: auto;
+    }
+  }
+}
+
+.text {
+  color: $PRIMARY !important;
+  font-weight: 200;
+}
+
+.fontIcon {
+  font-family: 'll-icon-font', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-transform: none;
+
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  &.cart::before {
+    content: '\71';
+    font-size: 44px;
+    color: $SECONDARY;
+  }
+}
