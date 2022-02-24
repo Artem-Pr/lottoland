@@ -1,0 +1,83 @@
+@import "src/styles/vars";
+
+.form {
+  flex: 1;
+  margin-left: 20px !important;
+}
+
+.formInput {
+  border-bottom: 1px solid $PRIMARY !important;
+  padding-left: 0 !important;
+  height: 24px;
+}
+
+.navMenu > li {
+  padding: 0 21px;
+  position: relative;
+
+  &:not(:first-child)::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 21px;
+    width: 1px;
+    background: $BORDER;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &:last-child {
+    padding-right: 0;
+  }
+}
+
+.fontIcon {
+  font-family: 'll-icon-font', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-transform: none;
+
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  &.cart::before {
+    content: '\71';
+    font-size: 30px;
+    color: $SECONDARY;
+  }
+
+  &.search::before {
+    content: '\e004';
+    font-size: 21px;
+  }
+
+  &.close::before {
+    position: absolute;
+    content: '\50';
+    font-size: 14px;
+    text-align: center;
+    line-height: 40px;
+    color: $SECONDARY;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    background: $SECONDARY_BACKGROUND;
+    transform: translate(-30%, -50%);
+  }
+}
+
+.headerMenuItem:hover .cart::before {
+  color: $HEADER_MENU_HOVER;
+}
+
+.walletWrapper {
+  margin-left: 20px;
+}
+
+.toCheckout {
+  line-height: 18px;
+}
