@@ -6,7 +6,7 @@ import {
     screen,
     waitFor,
 } from '@testing-library/react'
-import {NavMenu} from "./NavMenu";
+import {MainMenu} from "./MainMenu";
 
 global.matchMedia = global.matchMedia || (() => ({
     matches: false,
@@ -18,7 +18,7 @@ jest.mock('./components', () => ({
     EmptyCartMessage: () => <div>EmptyCartMessage</div>,
 }));
 
-jest.mock('./NavMenu.module.scss', () => ({
+jest.mock('./MainMenu.module.scss', () => ({
     headerMenuItem: 'mocked-header-menu-item',
     search: 'mocked-search-button',
 }));
@@ -30,20 +30,20 @@ describe('Header', () => {
 
     it('should render', () => {
         render(
-            <NavMenu />,
+            <MainMenu />,
         );
     });
 
     it('should not render search field', () => {
         render(
-            <NavMenu />,
+            <MainMenu />,
         );
         expect(screen.queryByText(/Search for Lottoland products/i)).toBeFalsy();
     });
 
     it('should render the search field after clicking the search button', async () => {
         const {container} = render(
-            <NavMenu />,
+            <MainMenu />,
         );
         const searchButton = container.querySelector('.mocked-search-button');
         searchButton && fireEvent.click(searchButton);
@@ -54,7 +54,7 @@ describe('Header', () => {
     
     it('should not render EmptyCartMessage', async () => {
         render(
-            <NavMenu />,
+            <MainMenu />,
         );
         await waitFor(() => {
             expect(screen.queryByText('EmptyCartMessage')).toBeFalsy()
@@ -63,7 +63,7 @@ describe('Header', () => {
 
     it('should render EmptyCartMessage when hovering mouse over cart', async () => {
         const {container} = render(
-          <NavMenu />,
+          <MainMenu />,
         );
         const headerMenuItem = container.querySelector('.mocked-header-menu-item');
         headerMenuItem && fireEvent.mouseOver(headerMenuItem);

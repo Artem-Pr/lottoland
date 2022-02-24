@@ -10,11 +10,11 @@ import {
 
 import {EmptyCartMessage} from './components';
 
-import styles from './NavMenu.module.scss';
+import styles from './MainMenu.module.scss';
 
 const {Text} = Typography;
 
-export const NavMenu = () => {
+export const MainMenu = () => {
     const [showSearchField, setShowSearchField] = useState(false);
 
     const handleSearchButtonClick = () => {

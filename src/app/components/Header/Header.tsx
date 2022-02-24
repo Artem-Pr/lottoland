@@ -2,7 +2,7 @@ import React from 'react';
 import {Layout} from 'antd';
 import {Svg} from 'src/uiKit';
 
-import {NavMenu} from './components';
+import {MainMenu} from './components';
 
 import styles from './Header.module.scss';
 
@@ -13,7 +13,7 @@ export const Header = () => (
         <div className="container position-fixed">
             <div className={styles.headerWrapper}>
                 <Svg iconName="ll-logo-green" className={styles.logo} />
-                <NavMenu />
+                <MainMenu />
             </div>
         </div>
     </HeaderLayout>
