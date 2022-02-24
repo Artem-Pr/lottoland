@@ -1,0 +1,59 @@
+@font-face {
+  font-family: 'Daxline Pro';
+  src: url('./DaxlinePro-Thin.eot');
+  src: local('Daxline Pro Thin'), local('DaxlinePro-Thin'),
+    url('DaxlinePro-Thin.eot?#iefix') format('embedded-opentype'),
+    url('DaxlinePro-Thin.woff2') format('woff2'),
+    url('DaxlinePro-Thin.woff') format('woff'),
+    url('DaxlinePro-Thin.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Daxline Pro';
+  src: url('DaxlinePro-Regular.eot');
+  src: local('Daxline Pro Regular'), local('DaxlinePro-Regular'),
+  url('DaxlinePro-Regular.eot?#iefix') format('embedded-opentype'),
+  url('DaxlinePro-Regular.woff2') format('woff2'),
+  url('DaxlinePro-Regular.woff') format('woff'),
+  url('DaxlinePro-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Daxline Pro';
+  src: url('DaxlinePro-Medium.eot');
+  src: local('Daxline Pro Medium'), local('DaxlinePro-Medium'),
+  url('DaxlinePro-Medium.eot?#iefix') format('embedded-opentype'),
+  url('DaxlinePro-Medium.woff2') format('woff2'),
+  url('DaxlinePro-Medium.woff') format('woff'),
+  url('DaxlinePro-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Daxline Pro';
+  src: url('DaxlinePro-Bold.eot');
+  src: local('Daxline Pro Bold'), local('DaxlinePro-Bold'),
+  url('DaxlinePro-Bold.eot?#iefix') format('embedded-opentype'),
+  url('DaxlinePro-Bold.woff2') format('woff2'),
+  url('DaxlinePro-Bold.woff') format('woff'),
+  url('DaxlinePro-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Daxline Pro';
+  src: url('DaxlinePro-Black.eot');
+  src: local('Daxline Pro Black'), local('DaxlinePro-Black'),
+  url('DaxlinePro-Black.eot?#iefix') format('embedded-opentype'),
+  url('DaxlinePro-Black.woff2') format('woff2'),
+  url('DaxlinePro-Black.woff') format('woff'),
+  url('DaxlinePro-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
