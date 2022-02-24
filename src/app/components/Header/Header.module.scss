@@ -60,6 +60,14 @@
   }
 }
 
-.cart:hover::before {
+.headerMenuItem:hover .cart::before {
   color: $HEADER_MENU_HOVER;
+}
+
+.walletWrapper {
+  margin-left: 20px;
+}
+
+.toCheckout {
+  line-height: 18px;
 }

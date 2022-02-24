@@ -1,5 +1,6 @@
 import React from 'react';
 import {
+    Badge,
     Layout,
     Typography,
 } from 'antd';
@@ -21,7 +22,22 @@ export const Header = () => (
                     <li><Text className={cx(styles.fontIcon, styles.search, 'header-menu-item')} /></li>
                     <li><Text className="header-menu-item">Log in</Text></li>
                     <li><Text className="header-menu-item">Register</Text></li>
-                    <li><Text className={cx(styles.fontIcon, styles.cart, 'header-menu-item')} /></li>
+                    <li>
+                        <Text
+                            className={cx(
+                                styles.headerMenuItem,
+                                'd-flex align-items-center header-menu-item',
+                            )}
+                        >
+                            <Badge count={0} showZero>
+                                <div className={cx(styles.fontIcon, styles.cart)} />
+                            </Badge>
+                            <div className={cx(styles.walletWrapper, 'd-flex flex-column')}>
+                                <Text className="wallet">&euro;0.00</Text>
+                                <span className={styles.toCheckout}>To checkout</span>
+                            </div>
+                        </Text>
+                    </li>
                 </ul>
             </div>
         </div>
