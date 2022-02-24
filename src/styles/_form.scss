@@ -1,0 +1,21 @@
+@import "vars";
+
+.ant-row.ant-form-item {
+  margin-bottom: 0
+}
+
+.ant-col.ant-form-item-label {
+  padding: 0;
+  height: 16px;
+
+  label {
+    color: $PRIMARY;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+  }
+}
+
+.ant-form-item-control-input {
+  min-height: 24px;
+}

@@ -17,6 +17,17 @@
   height: 39px;
 }
 
+.form {
+  flex: 1;
+  margin-left: 20px !important;
+}
+
+.formInput {
+  border-bottom: 1px solid $PRIMARY !important;
+  padding-left: 0 !important;
+  height: 24px;
+}
+
 .navMenu > li {
   padding: 0 21px;
   position: relative;
@@ -57,6 +68,22 @@
   &.search::before {
     content: '\e004';
     font-size: 21px;
+  }
+
+  &.close::before {
+    position: absolute;
+    content: '\50';
+    font-size: 14px;
+    text-align: center;
+    line-height: 40px;
+    color: $SECONDARY;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    background: $SECONDARY_BACKGROUND;
+    transform: translate(-30%, -50%);
   }
 }
 
