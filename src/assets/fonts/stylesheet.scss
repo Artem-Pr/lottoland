@@ -57,3 +57,12 @@
   font-weight: 900;
   font-style: normal;
 }
+
+@font-face {
+  font-family: 'll-icon-font';
+  src: url('ll-icon-font.woff');
+  src: local('ll-icon-font'), local('ll-icon-font'),
+  url('ll-icon-font.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}

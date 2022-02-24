@@ -18,10 +18,10 @@ export const Header = () => (
             <div className={styles.headerWrapper}>
                 <Svg iconName="ll-logo-green" className={styles.logo} />
                 <ul className={cx(styles.navMenu, 'd-flex align-items-center')}>
-                    <li><Text className="header-menu-item">Search</Text></li>
+                    <li><Text className={cx(styles.fontIcon, styles.search, 'header-menu-item')} /></li>
                     <li><Text className="header-menu-item">Log in</Text></li>
                     <li><Text className="header-menu-item">Register</Text></li>
-                    <li><Text className="header-menu-item">To checkout</Text></li>
+                    <li><Text className={cx(styles.fontIcon, styles.cart, 'header-menu-item')} /></li>
                 </ul>
             </div>
         </div>

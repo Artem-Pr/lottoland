@@ -37,3 +37,29 @@
     padding-right: 0;
   }
 }
+
+.fontIcon {
+  font-family: 'll-icon-font', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-transform: none;
+
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  &.cart::before {
+    content: '\71';
+    font-size: 30px;
+    color: $SECONDARY;
+  }
+
+  &.search::before {
+    content: '\e004';
+    font-size: 21px;
+  }
+}
+
+.cart:hover::before {
+  color: $HEADER_MENU_HOVER;
+}
