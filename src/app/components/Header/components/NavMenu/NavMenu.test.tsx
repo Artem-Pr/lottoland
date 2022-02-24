@@ -18,7 +18,7 @@ jest.mock('./components', () => ({
     EmptyCartMessage: () => <div>EmptyCartMessage</div>,
 }));
 
-jest.mock('./Header.module.scss', () => ({
+jest.mock('./NavMenu.module.scss', () => ({
     headerMenuItem: 'mocked-header-menu-item',
     search: 'mocked-search-button',
 }));
