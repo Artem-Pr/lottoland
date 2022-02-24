@@ -1,0 +1,15 @@
+@import 'vars';
+
+.ant-typography {
+  &.header-menu-item {
+    font-weight: 700;
+    color: $HEADER_MENU;
+    margin-bottom: 0;
+    cursor: pointer;
+
+    &:hover {
+      color: $HEADER_MENU_HOVER;
+      transition: color .125s ease;
+    }
+  }
+}

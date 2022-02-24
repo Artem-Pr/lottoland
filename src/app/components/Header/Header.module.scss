@@ -1,0 +1,39 @@
+@import "src/styles/vars";
+
+.headerLayout {
+  line-height: 25px;
+  width: 100%;
+}
+
+.headerWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+}
+
+.logo {
+  width: 125px;
+  height: 39px;
+}
+
+.navMenu > li {
+  padding: 0 21px;
+  position: relative;
+
+  &:not(:first-child)::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 21px;
+    width: 1px;
+    background: $BORDER;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &:last-child {
+    padding-right: 0;
+  }
+}
