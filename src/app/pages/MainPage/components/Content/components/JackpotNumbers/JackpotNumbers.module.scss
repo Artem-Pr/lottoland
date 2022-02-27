@@ -1,0 +1,41 @@
+@import "src/styles/vars";
+
+.wrapper {
+  margin: 14px 0;
+}
+
+.lotteryNumber {
+  font-family: Arial, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  margin-right: 5px;
+}
+
+.number {
+  border: 1px solid $BORDER;
+}
+
+.euroNumber {
+  border: 1px solid $HIGHLIGHTED_TEXT_PRIMARY;
+}
+
+.fontIcon {
+  font-family: 'll-icon-font', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-transform: none;
+
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  &.plus::before {
+    content: 'Q';
+    font-size: 16px;
+    line-height: 28px;
+    margin: 0 8px;
+  }
+}
