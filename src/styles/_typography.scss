@@ -21,3 +21,17 @@
     line-height: 18px;
   }
 }
+
+a.ant-typography {
+    font-family: 'KievitWebProBold', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    padding: 0 17px;
+    text-shadow: 1px 1px 0 $LOTTERY_MENU_TEXT_SHADOW;
+    line-height: 48px;
+    color: $LOTTERY_MENU_TEXT;
+
+    &:hover {
+      color: $LOTTERY_MENU_TEXT;
+    }
+}

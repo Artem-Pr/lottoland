@@ -59,6 +59,18 @@
 }
 
 @font-face {
+  font-family: 'KievitWebProBold';
+  src: url('KievitWebProBold-Regular.eot');
+  src: local('KievitWebProBold Regular'), local('KievitWebProBold Regular'),
+  url('KievitWebProBold-Regular.eot?#iefix') format('embedded-opentype'),
+  url('KievitWebProBold-Regular.woff2') format('woff2'),
+  url('KievitWebProBold-Regular.woff') format('woff'),
+  url('KievitWebProBold-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
   font-family: 'll-icon-font';
   src: url('ll-icon-font.woff');
   src: local('ll-icon-font'), local('ll-icon-font'),

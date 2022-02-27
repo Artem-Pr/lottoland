@@ -1,0 +1,19 @@
+@import "src/styles/vars";
+
+.navMenuWrapper {
+  background-image: linear-gradient(90deg,$NAV_MENU_BACKGROUND_START,$NAV_MENU_BACKGROUND_END);
+}
+
+.navMenu {
+  padding: 0;
+  height: 48px;
+
+  > li {
+    display: flex;
+    justify-content: center;
+
+    &:hover {
+      background: $LOTTERY_MENU_BACKGROUND_HOVER;
+    }
+  }
+}
