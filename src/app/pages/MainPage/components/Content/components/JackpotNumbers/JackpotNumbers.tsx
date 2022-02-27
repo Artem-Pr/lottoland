@@ -13,23 +13,27 @@ export const JackpotNumbers = ({
     euroNumbers,
 }: Props) => (
     <div className={cx(styles.wrapper, 'd-flex')}>
-        {numbers.map(number => (
-            <div className={cx(
-                styles.lotteryNumber,
-                styles.number,
-                'd-flex align-items-center justify-content-center',
-            )}
+        {numbers.map((number, idx) => (
+            <div
+                key={number + idx}
+                className={cx(
+                    styles.lotteryNumber,
+                    styles.number,
+                    'd-flex align-items-center justify-content-center',
+                )}
             >
                 {number}
             </div>
         ))}
         <div className={cx(styles.fontIcon, styles.plus)} />
-        {euroNumbers.map(number => (
-            <div className={cx(
-                styles.lotteryNumber,
-                styles.euroNumber,
-                'd-flex align-items-center justify-content-center',
-            )}
+        {euroNumbers.map((number, idx) => (
+            <div
+                key={number + idx}
+                className={cx(
+                    styles.lotteryNumber,
+                    styles.euroNumber,
+                    'd-flex align-items-center justify-content-center',
+                )}
             >
                 {number}
             </div>
