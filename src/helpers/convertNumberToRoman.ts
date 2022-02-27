@@ -1,4 +1,4 @@
-export const convertNumberToRoman = (number: string) => {
+export const convertNumberToRoman = (number: string | number) => {
     const digits = number.toString().split('');
     const signs = 'IVXLCDM';
     return digits.map((v, i) => {
