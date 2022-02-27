@@ -1,38 +1,20 @@
-import React from 'react';
+import React, {useMemo} from 'react';
 import {Table} from 'antd';
-import {convertNumberToRoman} from 'src/helpers';
+import {
+    convertNumberToRoman,
+    convertToMoneyFormat,
+    formatNumbersIntoTriads,
+} from 'src/helpers';
+
+import {JackpotResultsTableConfig} from './JackpotResultsTableConfig';
 
 interface DataSource {
     key: number,
     tier: string,
-    match: string,
+    match: React.ReactNode,
     winners: string,
-    amount: string,
+    amount: React.ReactNode,
 }
-
-const dataSource: DataSource[] = [
-    {
-        key: 0,
-        tier: '1',
-        match: '5 Numbers',
-        winners: '0x',
-        amount: '€315,645.30',
-    },
-    {
-        key: 1,
-        tier: '2',
-        match: '5 Numbers',
-        winners: '0x',
-        amount: '€315,645.30',
-    },
-    {
-        key: 2,
-        tier: '3',
-        match: '5 Numbers',
-        winners: '0x',
-        amount: '€315,645.30',
-    },
-];
 
 const columns = [
     {
@@ -57,11 +39,33 @@ const columns = [
     },
 ];
 
+const {
+    matchArray,
+    odds,
+} = JackpotResultsTableConfig;
+
 export const JackpotResultsTable = () => {
-    const preparedDataSource: DataSource[] = dataSource.map(({tier, ...rest}) => ({
-        tier: convertNumberToRoman(tier),
-        ...rest,
-    }));
+    const preparedDataSource: DataSource[] = useMemo(() => (
+        matchArray.map(({numbers, euroNumbers}, ids) => ({
+            key: ids,
+            tier: convertNumberToRoman(ids + 1),
+            match: (
+                <span
+                    dangerouslySetInnerHTML={{
+                        __html: `${numbers}&nbsp;Numbers&nbsp;+ ${euroNumbers}&nbsp;Euronumbers`,
+                    }}
+                />
+            ),
+            winners: `${formatNumbersIntoTriads(odds[`rank${ids + 1}`].winners)}x`,
+            amount: (
+                <span
+                    dangerouslySetInnerHTML={{
+                        __html: convertToMoneyFormat(odds[`rank${ids + 1}`].prize),
+                    }}
+                />
+            ),
+        }))
+    ), []);
 
     return (
         <Table
