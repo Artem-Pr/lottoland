@@ -1,9 +1,11 @@
 import React from 'react';
 import {Typography} from 'antd';
+import {formatDateToShortString} from 'src/helpers';
 
-import {formatDateToShortString} from '../../../../../helpers/dateHelpers';
-
-import {JackpotNumbers} from './components';
+import {
+    JackpotNumbers,
+    JackpotResultsTable,
+} from './components';
 
 import styles from './Content.module.scss';
 
@@ -17,5 +19,6 @@ export const Content = () => (
             <span>{`Results for ${formatDateToShortString('2022-02-25', 'EEEE d MMM y')}`}</span>
         </Title>
         <JackpotNumbers numbers={[4, 19, 34, 41, 43]} euroNumbers={[1, 5]} />
+        <JackpotResultsTable />
     </div>
 );

@@ -1,0 +1,38 @@
+@import "vars";
+
+.ant-table.ant-table-bordered > .ant-table-container {
+  border-left: 1px solid $BORDER;
+
+  & > .ant-table-content > table {
+    border-top: 1px solid $BORDER;
+
+    & > thead > tr > th:not(:last-child),
+    & > tbody > tr > td:not(:last-child) {
+      border-right: none;
+    }
+
+    & > thead > tr > th:last-child,
+    & > tbody > tr > td:last-child {
+      border-right: 1px solid $BORDER;
+    }
+
+    & > thead > tr > th:first-child,
+    & > tbody > tr > td:first-child {
+      padding-left: 20px;
+    }
+  }
+
+  & > .ant-table-header > table {
+    border-top: 1px solid $BORDER;
+  }
+}
+
+.ant-table-thead > tr > th {
+  background: $PRIMARY_BACKGROUND;
+  border-bottom: 1px solid $BORDER;
+}
+
+.ant-table-tbody > tr > td {
+  font-family: sans-serif;
+  border-bottom: 1px solid $BORDER;
+}

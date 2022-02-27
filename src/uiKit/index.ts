@@ -1,1 +1,1 @@
-export {Svg} from './svg';
+export {Svg} from './Svg';
