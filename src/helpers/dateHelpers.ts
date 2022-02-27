@@ -1,3 +1,8 @@
 import {format, parseISO} from 'date-fns';
 
-export const formatDateToShortString = (dateStr: string) => format(parseISO(dateStr), 'EEE d MMM');
+const defaultFormat = 'EEE d MMM';
+
+export const formatDateToShortString = (
+    dateStr: string,
+    formatStr?: string,
+) => format(parseISO(dateStr), formatStr || defaultFormat);
