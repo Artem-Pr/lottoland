@@ -1,17 +1,33 @@
 import React from 'react';
 import {Table} from 'antd';
+import {convertNumberToRoman} from 'src/helpers';
 
-const dataSource = [
+interface DataSource {
+    key: number,
+    tier: string,
+    match: string,
+    winners: string,
+    amount: string,
+}
+
+const dataSource: DataSource[] = [
     {
-        key: 1,
-        tier: 1,
+        key: 0,
+        tier: '1',
         match: '5 Numbers',
         winners: '0x',
         amount: '€315,645.30',
     },
     {
         key: 1,
-        tier: 1,
+        tier: '2',
+        match: '5 Numbers',
+        winners: '0x',
+        amount: '€315,645.30',
+    },
+    {
+        key: 2,
+        tier: '3',
         match: '5 Numbers',
         winners: '0x',
         amount: '€315,645.30',
@@ -41,12 +57,19 @@ const columns = [
     },
 ];
 
-export const JackpotResultsTable = () => (
-    <Table
-        dataSource={dataSource}
-        columns={columns}
-        bordered
-        size="middle"
-        pagination={false}
-    />
-);
+export const JackpotResultsTable = () => {
+    const preparedDataSource: DataSource[] = dataSource.map(({tier, ...rest}) => ({
+        tier: convertNumberToRoman(tier),
+        ...rest,
+    }));
+
+    return (
+        <Table
+            dataSource={preparedDataSource}
+            columns={columns}
+            bordered
+            size="middle"
+            pagination={false}
+        />
+    );
+};
