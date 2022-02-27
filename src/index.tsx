@@ -5,7 +5,6 @@ import './preload-svg';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-import 'antd/dist/antd.min.css';
 import './styles/index.scss';
 
 ReactDOM.render(
