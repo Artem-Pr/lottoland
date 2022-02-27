@@ -1,5 +1,12 @@
 @import 'vars';
 
+h2.ant-typography {
+  font-size: 21px;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin-bottom: 17px;
+}
+
 .ant-typography {
   &.header-menu-item {
     font-weight: 700;
