@@ -123,12 +123,11 @@ module.exports = {
     ignorePatterns: [
         '.eslintrc.js',
         '.babelrc.js',
-        'dev-backend',
+        'setupProxy.js',
         'jest.config.js',
         'coverage',
         'node_modules',
         'build',
-        'webpack',
         '**/*.test.ts',
         '**/*.test.tsx',
     ],
