@@ -18,8 +18,14 @@ const {Title} = Typography;
 export const Content = () => {
     const dispatch = useDispatch();
     const {
+        odds,
+        euroNumbers,
+        numbers,
         drawingDate,
     } = useSelector(eurojackpotResults);
+
+    const isEurojackpotNumbers = Boolean(numbers.length && euroNumbers.length);
+    const isEmptyOdds = !Object.keys(odds).length;
 
     const formattedDate = useMemo(() => formatDate(
         parseDateIntoValidFormat(drawingDate),
@@ -39,8 +45,15 @@ export const Content = () => {
                     <span>{`Results for ${formattedDate}`}</span>
                 </Title>
             )}
-            <JackpotNumbers numbers={[4, 19, 34, 41, 43]} euroNumbers={[1, 5]} />
-            <JackpotResultsTable />
+            {isEurojackpotNumbers && (
+                <JackpotNumbers
+                    numbers={numbers}
+                    euroNumbers={euroNumbers}
+                />
+            )}
+            {!isEmptyOdds && (
+                <JackpotResultsTable odds={odds} />
+            )}
         </div>
     );
 };

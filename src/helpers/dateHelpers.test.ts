@@ -1,6 +1,7 @@
 import {
   formatDate,
-  INVALID_DATE, parseDateIntoValidFormat
+  parseDateIntoValidFormat,
+  INVALID_DATE,
 } from './dateHelpers'
 
 describe('dateHelpers', () => {
@@ -25,7 +26,7 @@ describe('dateHelpers', () => {
       expect(response).toBe('Mon 10 Jul');
     });
   });
-
+  
   describe('parseDateIntoValidFormat', () => {
     it('should return "INVALID_DATE"', () => {
       const response = parseDateIntoValidFormat('25.76.2022, 21:00', 'dd.MM.yyyy, HH:mm')

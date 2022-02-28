@@ -1,13 +1,13 @@
-import {Odds} from 'src/api/apiTypes';
-
-interface Match {
-    numbers: number
-    euroNumbers: number
-}
-
 interface JackpotResultsTableConfigTypes {
-    matchArray: Match[]
-    odds: Odds
+    matchArray: {
+        numbers: number
+        euroNumbers: number
+    }[]
+    columns: {
+        title: string
+        dataIndex: string
+        key: string
+    }[]
 }
 
 export const JackpotResultsTableConfig: JackpotResultsTableConfigTypes = {
@@ -61,71 +61,26 @@ export const JackpotResultsTableConfig: JackpotResultsTableConfigTypes = {
             euroNumbers: 1,
         },
     ],
-    odds: {
-        rank0: {
-            winners: 0,
-            specialPrize: 0,
-            prize: 0,
+    columns: [
+        {
+            title: 'Tier',
+            dataIndex: 'tier',
+            key: 'tier',
         },
-        rank1: {
-            winners: 0,
-            specialPrize: 0,
-            prize: 4400000000,
+        {
+            title: 'Match',
+            dataIndex: 'match',
+            key: 'match',
         },
-        rank2: {
-            winners: 7,
-            specialPrize: 0,
-            prize: 31564530,
+        {
+            title: 'Winners',
+            dataIndex: 'winners',
+            key: 'winners',
         },
-        rank3: {
-            winners: 4,
-            specialPrize: 0,
-            prize: 19495740,
+        {
+            title: 'Amount',
+            dataIndex: 'amount',
+            key: 'amount',
         },
-        rank8: {
-            winners: 35645,
-            specialPrize: 0,
-            prize: 2260,
-        },
-        rank9: {
-            winners: 39948,
-            specialPrize: 0,
-            prize: 1950,
-        },
-        rank10: {
-            winners: 73973,
-            specialPrize: 0,
-            prize: 1510,
-        },
-        rank4: {
-            winners: 40,
-            specialPrize: 0,
-            prize: 649850,
-        },
-        rank5: {
-            winners: 1158,
-            specialPrize: 0,
-            prize: 20200,
-        },
-        rank6: {
-            winners: 2013,
-            specialPrize: 0,
-            prize: 9030,
-        },
-        rank11: {
-            winners: 192409,
-            specialPrize: 0,
-            prize: 1050,
-        },
-        rank7: {
-            winners: 2327,
-            specialPrize: 0,
-            prize: 6700,
-        },
-        rank12: {
-            winners: 576689,
-            specialPrize: 0,
-            prize: 860,
-        },
-    },
+    ],
 };

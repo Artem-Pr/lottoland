@@ -1,12 +1,18 @@
-import React, {useMemo} from 'react';
+import React from 'react';
 import {Table} from 'antd';
 import {
     convertNumberToRoman,
     convertToMoneyFormat,
     formatNumbersIntoTriads,
 } from 'src/helpers';
+import type {Odds} from 'src/api/apiTypes';
 
 import {JackpotResultsTableConfig} from './JackpotResultsTableConfig';
+
+const {
+    matchArray,
+    columns,
+} = JackpotResultsTableConfig;
 
 interface DataSource {
     key: number,
@@ -16,56 +22,32 @@ interface DataSource {
     amount: React.ReactNode,
 }
 
-const columns = [
-    {
-        title: 'Tier',
-        dataIndex: 'tier',
-        key: 'tier',
-    },
-    {
-        title: 'Match',
-        dataIndex: 'match',
-        key: 'match',
-    },
-    {
-        title: 'Winners',
-        dataIndex: 'winners',
-        key: 'winners',
-    },
-    {
-        title: 'Amount',
-        dataIndex: 'amount',
-        key: 'amount',
-    },
-];
+interface Props {
+    odds: Odds
+}
 
-const {
-    matchArray,
+export const JackpotResultsTable = ({
     odds,
-} = JackpotResultsTableConfig;
-
-export const JackpotResultsTable = () => {
-    const preparedDataSource: DataSource[] = useMemo(() => (
-        matchArray.map(({numbers, euroNumbers}, ids) => ({
-            key: ids,
-            tier: convertNumberToRoman(ids + 1),
-            match: (
-                <span
-                    dangerouslySetInnerHTML={{
-                        __html: `${numbers}&nbsp;Numbers&nbsp;+ ${euroNumbers}&nbsp;Euronumbers`,
-                    }}
-                />
-            ),
-            winners: `${formatNumbersIntoTriads(odds[`rank${ids + 1}`].winners)}x`,
-            amount: (
-                <span
-                    dangerouslySetInnerHTML={{
-                        __html: convertToMoneyFormat(odds[`rank${ids + 1}`].prize),
-                    }}
-                />
-            ),
-        }))
-    ), []);
+}: Props) => {
+    const preparedDataSource: DataSource[] = matchArray.map(({numbers, euroNumbers}, ids) => ({
+        key: ids,
+        tier: convertNumberToRoman(ids + 1),
+        match: (
+            <span
+                dangerouslySetInnerHTML={{
+                    __html: `${numbers}&nbsp;Numbers&nbsp;+ ${euroNumbers}&nbsp;Euronumbers`,
+                }}
+            />
+        ),
+        winners: `${formatNumbersIntoTriads(odds[`rank${ids + 1}`].winners)}x`,
+        amount: (
+            <span
+                dangerouslySetInnerHTML={{
+                    __html: convertToMoneyFormat(odds[`rank${ids + 1}`].prize),
+                }}
+            />
+        ),
+    }));
 
     return (
         <Table
