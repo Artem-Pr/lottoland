@@ -1,0 +1,10 @@
+@import "vars";
+
+.ant-drawer-body {
+  padding: 0;
+  height: 100%;
+}
+
+.ant-drawer-header-close-only {
+  background-image: linear-gradient(90deg,$NAV_MENU_BACKGROUND_START,$NAV_MENU_BACKGROUND_END);
+}

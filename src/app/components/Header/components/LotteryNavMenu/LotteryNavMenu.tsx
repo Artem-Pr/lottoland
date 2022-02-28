@@ -6,9 +6,19 @@ import styles from './LotteryNavMenu.module.scss';
 
 const {Link} = Typography;
 
-export const LotteryNavMenu = () => (
+interface Props {
+    isColumns?: boolean
+}
+
+export const LotteryNavMenu = ({isColumns}:Props) => (
     <div className={styles.navMenuWrapper}>
-        <ul className={cx(styles.navMenu, 'd-flex justify-content-center container')}>
+        <ul className={cx(
+            styles.navMenu,
+            'd-flex justify-content-center',
+            {'flex-column': isColumns},
+            {[styles.heightAuto]: isColumns},
+        )}
+        >
             <li><Link href="/">PowerBall</Link></li>
             <li><Link href="/">EuroMillions</Link></li>
             <li><Link href="/">More Jackpots</Link></li>
