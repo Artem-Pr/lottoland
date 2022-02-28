@@ -3,6 +3,7 @@ import {Table} from 'antd';
 import {
     convertNumberToRoman,
     convertToMoneyFormat,
+    CurrenciesSymbols,
     formatNumbersIntoTriads,
 } from 'src/helpers';
 import type {Odds} from 'src/api/apiTypes';
@@ -24,10 +25,12 @@ interface DataSource {
 
 interface Props {
     odds: Odds
+    currency: CurrenciesSymbols
 }
 
 export const JackpotResultsTable = ({
     odds,
+    currency,
 }: Props) => {
     const preparedDataSource: DataSource[] = matchArray.map(({numbers, euroNumbers}, ids) => ({
         key: ids,
@@ -43,7 +46,10 @@ export const JackpotResultsTable = ({
         amount: (
             <span
                 dangerouslySetInnerHTML={{
-                    __html: convertToMoneyFormat(odds[`rank${ids + 1}`].prize),
+                    __html: convertToMoneyFormat(
+                        odds[`rank${ids + 1}`].prize,
+                        CurrenciesSymbols[currency],
+                    ),
                 }}
             />
         ),

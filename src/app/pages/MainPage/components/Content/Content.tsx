@@ -19,6 +19,7 @@ export const Content = () => {
     const dispatch = useDispatch();
     const {
         odds,
+        currency,
         euroNumbers,
         numbers,
         drawingDate,
@@ -52,7 +53,10 @@ export const Content = () => {
                 />
             )}
             {!isEmptyOdds && (
-                <JackpotResultsTable odds={odds} />
+                <JackpotResultsTable
+                    odds={odds}
+                    currency={currency}
+                />
             )}
         </div>
     );

@@ -5,6 +5,7 @@ import type {
     EurojackpotResults as State,
     EurojackpotLastResults,
 } from 'src/api/apiTypes';
+import {CurrenciesSymbols} from 'src/helpers';
 
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 
@@ -12,7 +13,7 @@ import type {AppThunk} from '../store/store';
 
 const initialState: State = {
     last: {
-        currency: 'EUR',
+        currency: CurrenciesSymbols.EUR,
         drawingDate: '',
         odds: {},
         numbers: [],

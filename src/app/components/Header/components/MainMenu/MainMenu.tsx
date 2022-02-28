@@ -7,6 +7,7 @@ import {
     Popover,
     Typography,
 } from 'antd';
+import {CurrenciesSymbols} from 'src/helpers';
 
 import {EmptyCartMessage} from './components';
 
@@ -68,7 +69,7 @@ export const MainMenu = () => {
                                 <div className={cx(styles.fontIcon, styles.cart)} />
                             </Badge>
                             <div className={cx(styles.walletWrapper, 'd-flex flex-column')}>
-                                <Text className="wallet">&euro;0.00</Text>
+                                <Text className="wallet">{`${CurrenciesSymbols.EUR}0.00`}</Text>
                                 <span className={styles.toCheckout}>To checkout</span>
                             </div>
                         </Text>

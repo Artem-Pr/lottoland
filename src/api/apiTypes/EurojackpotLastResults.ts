@@ -1,3 +1,5 @@
+import {CurrenciesSymbols} from 'src/helpers';
+
 interface ResultsNumbers {
     numbers: number[]
     euroNumbers: number[]
@@ -10,7 +12,7 @@ export type Odds = Record<string, {
 }>;
 
 export interface EurojackpotLastResults extends ResultsNumbers {
-    currency: string
+    currency: CurrenciesSymbols
     drawingDate: string
     odds: Odds
 }
