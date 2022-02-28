@@ -16,6 +16,7 @@ h5.ant-typography {
 .ant-typography {
   &.header-menu-item {
     font-weight: 700;
+    line-height: 32px;
     color: $HEADER_MENU;
     margin-bottom: 0;
     cursor: pointer;

@@ -10,4 +10,9 @@
   display: flex;
   justify-content: center;
   background: $PRIMARY_BACKGROUND;
+  z-index: 1;
+
+  @media (max-width: 835px) {
+    height: 70px;
+  }
 }

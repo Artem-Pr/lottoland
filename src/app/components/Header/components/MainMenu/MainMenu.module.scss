@@ -2,13 +2,17 @@
 
 .form {
   flex: 1;
-  margin-left: 20px !important;
+  margin: 0 20px;
 }
 
 .formInput {
   border-bottom: 1px solid $PRIMARY !important;
   padding-left: 0 !important;
   height: 24px;
+}
+
+.navMenu {
+  padding: 0;
 }
 
 .navMenu > li {
@@ -29,6 +33,12 @@
 
   &:last-child {
     padding-right: 0;
+  }
+
+  &:not(:first-child) {
+    @media (max-width: 835px) {
+      display: none;
+    }
   }
 }
 

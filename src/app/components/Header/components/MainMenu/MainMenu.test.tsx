@@ -30,20 +30,29 @@ describe('Header', () => {
 
     it('should render', () => {
         render(
-            <MainMenu />,
+            <MainMenu
+                showSearchField={true}
+                onSearchButtonClick={() => {}}
+            />,
         );
     });
 
     it('should not render search field', () => {
         render(
-            <MainMenu />,
+          <MainMenu
+            showSearchField={true}
+            onSearchButtonClick={() => {}}
+          />,
         );
         expect(screen.queryByText(/Search for Lottoland products/i)).toBeFalsy();
     });
 
     it('should render the search field after clicking the search button', async () => {
         const {container} = render(
-            <MainMenu />,
+          <MainMenu
+            showSearchField={true}
+            onSearchButtonClick={() => {}}
+          />,
         );
         const searchButton = container.querySelector('.mocked-search-button');
         searchButton && fireEvent.click(searchButton);
@@ -54,7 +63,10 @@ describe('Header', () => {
     
     it('should not render EmptyCartMessage', async () => {
         render(
-            <MainMenu />,
+          <MainMenu
+            showSearchField={true}
+            onSearchButtonClick={() => {}}
+          />,
         );
         await waitFor(() => {
             expect(screen.queryByText('EmptyCartMessage')).toBeFalsy()
@@ -63,7 +75,10 @@ describe('Header', () => {
 
     it('should render EmptyCartMessage when hovering mouse over cart', async () => {
         const {container} = render(
-          <MainMenu />,
+          <MainMenu
+            showSearchField={true}
+            onSearchButtonClick={() => {}}
+          />,
         );
         const headerMenuItem = container.querySelector('.mocked-header-menu-item');
         headerMenuItem && fireEvent.mouseOver(headerMenuItem);

@@ -5,14 +5,79 @@
   width: 100%;
 }
 
+.headerBorder {
+  @media (max-width: 835px) {
+    border-bottom: 1px solid $BORDER;
+  }
+}
+
+.container {
+  display: block;
+
+  @media (max-width: 835px) {
+    display: flex;
+  }
+}
+
 .headerWrapper {
+  flex: 1;
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 70px;
+  background: $PRIMARY_BACKGROUND;
+
+  @media (max-width: 835px) {
+    justify-content: start;
+  }
 }
 
 .logo {
   width: 125px;
   height: 39px;
+
+  @media (max-width: 835px) {
+    order: 1;
+  }
+}
+
+.displayNone {
+  @media (max-width: 835px) {
+    display: none;
+  }
+}
+
+.MenuButton {
+  @media (min-width: 835px) {
+    display: none;
+  }
+}
+
+.fontIcon {
+  order: 2;
+  margin: 0 10px 0 auto;
+  font-family: 'll-icon-font', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-transform: none;
+  background: $PRIMARY_BACKGROUND;
+
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  &.person::before {
+    content: 'E';
+    font-size: 26px;
+
+    @media (min-width: 835px) {
+      display: none;
+    }
+  }
+}
+
+.lotteryMenuWrapper {
+  @media (max-width: 835px) {
+    display: none;
+  }
 }

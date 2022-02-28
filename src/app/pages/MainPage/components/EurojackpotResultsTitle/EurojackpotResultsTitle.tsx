@@ -24,9 +24,18 @@ const eurojackpotDaysList = [
 const eurojackpotYearsList = ['2022', '2021', '2020', '2019', '2018', '2017', '2016', '2015', '2014', '2013', '2012'];
 
 export const EurojackpotResultsTitle = () => (
-    <div className={cx(styles.titleWrapper, 'd-flex justify-content-between align-items-end')}>
-        <Title level={2}>Eurojackpot results & winning numbers</Title>
-        <div>
+    <div className={cx(
+        styles.titleWrapper,
+        'd-flex justify-content-between align-items-end flex-wrap',
+    )}
+    >
+        <Title
+            className={styles.title}
+            level={2}
+        >
+            Eurojackpot results & winning numbers
+        </Title>
+        <div className={styles.selectsWrapper}>
             <Select
                 dropdownClassName={styles.selectDay}
                 className={styles.selectDay}

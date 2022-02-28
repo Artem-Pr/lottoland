@@ -5,6 +5,14 @@
   padding-bottom: 17px;
 }
 
+.title {
+  margin-right: 7px !important;
+}
+
+.selectsWrapper > div:first-child {
+  margin-left: 0;
+}
+
 .selectDay {
   font-family: Arial, sans-serif;
   font-weight: 500;

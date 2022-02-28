@@ -8,6 +8,6 @@ const instance = axios.create({
 
 export const api = {
     euroJackpot(): Promise<AxiosResponse<EurojackpotResults>> {
-        return instance.get('drawings/euroJackpot');
+        return instance.get('drawings/euroJackpot/');
     },
 };
