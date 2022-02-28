@@ -4,7 +4,7 @@ import {
     Select,
     Typography,
 } from 'antd';
-import {formatDateToShortString} from 'src/helpers/dateHelpers';
+import {formatDate} from 'src/helpers/dateHelpers';
 
 import styles from './EurojeckpotResultsTitle.module.scss';
 
@@ -38,7 +38,7 @@ export const EurojackpotResultsTitle = () => (
                         key={dayStr}
                         value={dayStr}
                     >
-                        {formatDateToShortString(dayStr)}
+                        {formatDate(dayStr)}
                     </Option>
                 ))}
             </Select>
