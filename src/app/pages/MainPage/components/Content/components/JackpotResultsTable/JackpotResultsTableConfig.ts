@@ -1,8 +1,4 @@
-type Odds = Record<string, {
-    winners: number,
-    specialPrize: number,
-    prize: number,
-}>;
+import {Odds} from 'src/api/apiTypes';
 
 interface Match {
     numbers: number
