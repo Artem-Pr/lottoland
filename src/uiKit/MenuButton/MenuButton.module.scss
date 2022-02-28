@@ -1,0 +1,32 @@
+.menuButton {
+  width: 43.5px;
+  height: 56px;
+  padding: 0;
+  position: relative;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+
+  .lineOne,
+  .lineTwo,
+  .lineThree {
+    position: absolute;
+    left: 10.5px;
+    width: 21px;
+    height: 1px;
+    background-color: #69a507;
+  }
+
+  .lineOne {
+    top: 19px;
+  }
+
+  .lineTwo {
+    top: 28px;
+  }
+
+  .lineThree {
+    top: 37px;
+  }
+}

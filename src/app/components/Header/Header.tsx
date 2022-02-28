@@ -4,7 +4,10 @@ import {
     Typography,
 } from 'antd';
 import cx from 'classnames';
-import {Svg} from 'src/uiKit';
+import {
+    MenuButton,
+    Svg,
+} from 'src/uiKit';
 
 import {
     MainMenu,
@@ -28,6 +31,10 @@ export const Header = () => {
             <div className={cx(styles.headerBorder, 'position-fixed w-100')}>
                 <div className={cx(styles.container, 'container')}>
                     <div className={styles.headerWrapper}>
+                        <MenuButton
+                            className={styles.MenuButton}
+                            onClick={() => {}}
+                        />
                         <Svg
                             iconName="ll-logo-green"
                             className={cx(
