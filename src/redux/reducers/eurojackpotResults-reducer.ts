@@ -13,7 +13,7 @@ import type {AppThunk} from '../store/store';
 
 const initialState: State = {
     last: {
-        currency: CurrenciesSymbols.EUR,
+        currency: CurrenciesSymbols.EUR as CurrenciesSymbols,
         drawingDate: '',
         odds: {},
         numbers: [],
