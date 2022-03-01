@@ -40,7 +40,7 @@ describe('Header', () => {
     it('should not render search field', () => {
         render(
           <MainMenu
-            showSearchField={true}
+            showSearchField={false}
             onSearchButtonClick={() => {}}
           />,
         );
@@ -85,5 +85,18 @@ describe('Header', () => {
         await waitFor(() => {
             expect(screen.queryByText('EmptyCartMessage')).toBeTruthy()
         })
+    })
+
+    it('should call onSearchButtonClick', async () => {
+        const onClick = jest.fn(() => {})
+        const {container} = render(
+          <MainMenu
+            showSearchField={false}
+            onSearchButtonClick={onClick}
+          />,
+        );
+        const searchButton = container.querySelector('.mocked-search-button');
+        searchButton && fireEvent.click(searchButton);
+        expect(onClick).toBeCalled();
     })
 })
